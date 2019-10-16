@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grovelark</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+    <script src="http://kit.fontawesome.com/6f9deb639c.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="music_player.js"></script>
+</head>
+
+
+<body>
+    <header class="infoHeader">
+        <section class="headerButton" id="buttonBack"><i class="fas fa-chevron-left"></i></section>
+        <section class="playlistInfo">Playlist - <item id="currentPlaylistID">currentPlaylistID</item>
+        </section>
+        <section class="headerButton" id="buttonOptions"><i class="fas fa-ellipsis-v"></i></section>
+    </header>
+
+    <!--here is main-->
+    <section class="main">
+        <section class="view" id="playlist">
+            
+            <article class="queueItem" songNr="1" link="https://archive.org/download/78_were-you-foolin_johnny-green-and-his-orchestra-johnny-green-allan-curtis-leslie-a_gbia0150380a/_78_were-you-foolin_johnny-green-and-his-orchestra-johnny-green-allan-curtis-leslie-a_gbia0150380a_01_3.5_ET_EQ.mp3">
+                <section class="queueCoverArt">
+                    <img class="queueImg" src="images/ht.jpg">
+                </section>
+
+                <section class="queueSongInfo">
+                    <span class="songName">Fallna Hjältar</span>
+                    <span class="artistName">Hårda Tider</span>
+
+                </section>
+                <section class="queuePlayButton"><i class="fas fa-play-circle"></i></section>
+            </article>
+            
+            
+            <article class="queueItem" songNr="2" link="https://archive.org/download/78_im-looking-over-a-four-leaf-clover_paul-specht-and-his-orchestra-johnny-morris-woo_gbia0015057b/_78_im-looking-over-a-four-leaf-clover_paul-specht-and-his-orchestra-johnny-morris-woo_gbia0015057b_01_3.8_CT_EQ.mp3">
+                <section class="queueCoverArt"><img class="queueImg" src="images/roybailey.jpg"></section>
+                
+                <section class="queueSongInfo">
+                    <span class="songName">What You Do</span>
+                    <span class="artistName">Roy Bailey</span>
+
+
+                </section>
+                <section class="queuePlayButton"><i class="fas fa-play-circle"></i></section>
+            </article>
+
+
+            <article class="queueItem" songNr="3" link="https://archive.org/download/78_they-cant-take-that-away-from-me_fred-astaire-johnny-green-and-his-orchestra-johnn_gbia0151637a/_78_they-cant-take-that-away-from-me_fred-astaire-johnny-green-and-his-orchestra-johnn_gbia0151637a_01_3.5_ET_EQ.mp3">
+                <section class="queueCoverArt"><img class="queueImg" src="images/deepcuts.jpg"></section>
+                
+                <section class="queueSongInfo">
+                    <span class="songName">You Make Me Like Charity</span>
+                    <span class="artistName">The Knife</span>
+
+
+                </section>
+                <section class="queuePlayButton"><i class="fas fa-play-circle"></i></section>
+            </article>
+
+        </section>
+
+
+
+
+
+
+
+
+        <aside class="view" id="player">
+            <article class="rightView" id="topRight"><img id="coverArt" src="images/pic1.png"></article>
+            <article class="rightView" id="infoBox">
+                <section class="songInfoButton" id="plusButton"><i class="fas fa-plus-square"></i></section>
+                <section id="songInfoText">
+                    <article id="songInfo">Points to head song</article>
+                    <article id="artistInfo">Points to head guy</article>
+                </section>
+
+                <section class="songInfoButton" id="heartButton"><i class="fab fa-gratipay"></i></section>
+            </article>
+
+
+            <article class="rightView" id="progressBox">
+                <item class="timestamp" id="timestampLeft">
+                    00:00
+                </item>
+
+                <item class="progressBar">#---x----#</item>
+
+                <item class="timestamp" id="timestampRight">
+                    13:12
+                </item>
+
+
+
+            </article>
+
+
+
+            <article class="rightView" id="playbackOptionsBox">
+                <knapp class="playbackButton" id="repeat"><i class="fas fa-retweet"></i></knapp>
+                <knapp class="playbackButton" id="forward"><i class="fas fa-forward"></i></knapp>
+                <knapp class="playbackButton" id="playerPause"><i class="fas fa-pause-circle"></i></knapp>
+                <knapp class="playButton" id="playerPlay"><i class="fas fa-play-circle"></i></knapp>
+                <knapp class="playbackButton" id="forward"><i class="fas fa-forward"></i></knapp>
+                <knapp class="playbackButton" id="shuffle"><i class="fas fa-random"></i></knapp>
+
+            </article>
+        </aside>
+
+    </section>
+
+
+
+
+</body>
+
+
+
+
+
+</html>
