@@ -34,6 +34,12 @@
     font-size:2.5vh;
 }
 
+/* span{
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow:hidden;
+} */
+
 .main{ /*som .content i scenerylektionen*/
     display:flex;
     flex-grow:1;
@@ -189,10 +195,13 @@
     
 }
 .queueSongInfo{
+    padding:0;
     font-size:2.5vw;
     justify-content:left;
+    text-align:left;
     display:flex;
     flex-direction:column;
+    
 }
 .songName{
     font-size:90%;
