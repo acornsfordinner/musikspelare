@@ -7,9 +7,7 @@ radio.src = 'http://trace.dnbradio.com:8000/dnbradio_main.mp3'
 
 let shuffle = false
 
-console.log("hej")
 function start() {
-    console.log("hallå")
 
     /**hur många låtar finns i playlist */
     queueSize = playlist.children.length - 1
