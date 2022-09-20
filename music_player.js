@@ -1,4 +1,3 @@
-
 let songNr = 1
 let queueSize
 let player = new Audio()
@@ -8,14 +7,25 @@ radio.src = 'http://trace.dnbradio.com:8000/dnbradio_main.mp3'
 
 let shuffle = false
 
-
 function start() {
 
     /**hur många låtar finns i playlist */
-    queueSize = playlist.children.length-1
+    queueSize = playlist.children.length - 1
 
     /**sätt den initiellt aktuella låten */
     player.src = $(".queueItem:nth-child(" + songNr + ")").attr("link")
+
+
+    $("#queuePlayIcon").attr("src", "icons/play_icon.svg").attr("width", "30px")
+    $("#queuePauseIcon").attr("src", "icons/pause_icon.svg")
+    $("#playerPlayIcon").attr("src", "icons/play_icon.svg")
+    $("#playerPauseIcon").attr("src", "icons/pause_icon.svg")
+    $("#playerShuffleIcon").attr("src", "icons/shuffle.svg")
+    $("#playerRepeatIcon").attr("src", "icons/repeat.svg")
+    $("#playerFfIcon").attr("src", "icons/ff.svg")
+    $("#playerRwIcon").attr("src", "icons/rw.svg")
+
+
 
     $(".queueItem:nth-child(" + songNr + ")").css({ backgroundColor: "orange" })
     $("#coverArt").attr("src", $(".queueItem:nth-child(" + songNr + ")").children(".queueCoverArt").children(".queueImg").attr("src"))
@@ -80,29 +90,29 @@ function queuePlayClick() {
 
 function timestamp(event) {
     //console.log("omg", Math.round(event.timeStamp / 1000), player.duration)
-    console.log("progress", Math.round(player.currentTime),player.duration)
+    console.log("progress", Math.round(player.currentTime), player.duration)
     if (isNaN(player.duration)) {
 
     }
-    if (!isFinite(player.duration)){
+    if (!isFinite(player.duration)) {
         $('#timestampLeft').text("")
         $('#timestampRight').text("")
-        
+
     }
 
     else {
-    $('#timestampLeft').text(sec_to_min(Math.round(player.currentTime)))
-    $("#timestampRight").text(sec_to_min(Math.round(player.duration)))
+        $('#timestampLeft').text(sec_to_min(Math.round(player.currentTime)))
+        $("#timestampRight").text(sec_to_min(Math.round(player.duration)))
     }
 
     /** Popup om att ha lystnat för länge*/
     let woke
-    if (Math.round(player.currentTime) == 60){
-        if (!confirm("Vill du fortsätta lyssna?")){
+    if (Math.round(player.currentTime) == 60) {
+        if (!confirm("Vill du fortsätta lyssna?")) {
             player.pause()
         }
     }
-    $("#bar").css({ width: ((player.currentTime/player.duration)*100) + "%" })
+    $("#bar").css({ width: ((player.currentTime / player.duration) * 100) + "%" })
 }
 
 function sec_to_min(sec) {
@@ -227,15 +237,15 @@ function next_song() {
 function repeat_toggle() {
     //funkar inte, varför?
     //player.loop = true|false   
-    
-    if (player.loop==true){
-        player.loop=false
+
+    if (player.loop == true) {
+        player.loop = false
     }
-    else{
-        player.loop=true
+    else {
+        player.loop = true
     }
-    console.log("repeat "+player.loop)
-    
+    console.log("repeat " + player.loop)
+
 }
 
 function shuffle_toggle() {
@@ -271,7 +281,7 @@ function song_end() {
         player.currentTime = 0
     }
     else if (shuffle == true) {
-        next_song_shuffle()   
+        next_song_shuffle()
     }
     else {
         next_song()
@@ -279,7 +289,7 @@ function song_end() {
     play_audio()
 }
 
-function heart_click(){
+function heart_click() {
     //TO DO
     //change font color
 }
